@@ -1,0 +1,13 @@
+# Ignore vendor libraries
+/vendor/
+
+# Ignore config file with DB passwords
+config.php
+
+# Ignore IDE/editor stuff
+.vscode/
+*.idea/
+*.DS_Store
+
+# Ignore logs
+*.log

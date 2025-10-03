@@ -1,0 +1,35 @@
+/* Reuse your visual language */
+.fade-in { animation: fadeIn .5s ease-in-out; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px);} to{opacity:1;transform:none;} }
+
+.card { transition: transform .3s ease, box-shadow .3s ease; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,.08); }
+
+.dashboard-header {
+  background: linear-gradient(to right, #ffffff, #f4faf7);
+  padding: .75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: .75rem;
+  border-left: 6px solid #146c43;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.08);
+  display:flex; align-items:center; justify-content:center; gap:.75rem;
+}
+.dashboard-header h1 { color:#146c43; font-size:1.7rem; font-weight:700; margin:0; }
+.dashboard-header i { font-size:1.3rem; color:#146c43; }
+
+.chip{
+  display:inline-block; font-weight:600; padding:.35rem .7rem; border-radius:999px; line-height:1;
+  border:1px solid #bfe8d1; background:#e7f6ee; color:#146c43;
+}
+
+.booking-table thead th{
+  background:#146c43; color:#fff; font-weight:600; border:0 !important; white-space:nowrap;
+}
+.booking-table td{
+  border-top:1px solid #e6f3ec !important; vertical-align:middle; color:#2b3a33;
+}
+.booking-table tbody tr:nth-child(even) td{ background:#f4faf7; }
+.booking-table tbody tr:nth-child(odd)  td{ background:#fff; }
+
+.pagination .page-link { color:#146c43; border-radius:.5rem; margin:0 .2rem; }
+.pagination .page-item.active .page-link { background-color:#28a745; border-color:#28a745; color:#fff; }

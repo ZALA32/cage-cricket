@@ -1,0 +1,250 @@
+/* General Styles */
+:root {
+    --primary-color: #198754; /* Green from Cage Cricket theme */
+    --hover-color: #146c43; /* Darker Green for hover */
+    --background-color: #e6f4ea; /* Light green to match turf_selection.php */
+    --card-background: #e6f4ea; /* Light green to match turf_selection.php */
+    --text-color: #212529; /* Dark gray for text */
+    --border-radius: 0.75rem;
+    --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('../images/turf_photo.jpg') center center no-repeat;
+    background-size: cover; /* Fills container horizontally and vertically */
+    background-color: #000; /* Fallback */
+}
+
+/* Centered Hero Content */
+.hero-content {
+    padding: 2rem;
+    max-width: 800px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section .btn-success {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+}
+
+.hero-section .btn-success:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hover-pulse:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s ease-in-out, box-shadow 0.3s ease;
+    z-index: 10; /* Ensures card comes upfront */
+}
+
+/* Turf Cards */
+.turf-card {
+    background: var(--card-background);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.turf-card img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.turf-card .btn-success {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.turf-card .btn-success:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+/* Featured Turf Cards */
+.featured-turf-card {
+    border: 2px solid var(--primary-color);
+}
+
+.featured-turf-card.animate-in {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Search Bar Section */
+.search-section {
+    background: transparent; /* No background for seamless integration */
+}
+
+.search-bar {
+    background: var(--card-background); /* Light green to match page background */
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+}
+
+.search-bar .input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-bar .input-group-text {
+    border: 2px solid var(--primary-color);
+    border-right: none;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+}
+
+.search-bar .input-group-text i {
+    font-size: 1rem;
+}
+
+.search-bar .form-control {
+    border: 2px solid var(--primary-color);
+    border-left: none;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    background: var(--background-color) !important; /* Light green to match page */
+}
+
+.search-bar .form-control:focus {
+    border-color: var(--hover-color);
+    box-shadow: 0 0 0 0.2rem rgba(20, 108, 67, 0.25);
+    background: var(--background-color) !important; /* Maintain light green on focus */
+}
+
+.search-bar .btn-outline-success {
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar .btn-outline-success i {
+    font-size: 1rem;
+}
+
+.search-bar .btn-outline-success:hover,
+.search-bar .btn-outline-success:focus,
+.search-bar .btn-outline-success:active,
+.search-bar .btn-outline-success.active,
+.search-bar .btn-outline-success:focus-visible {
+    background: var(--hover-color);
+    border-color: var(--hover-color);
+    color: #fff;
+}
+
+/* CTA Section */
+.cta-section {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+}
+
+.cta-section .btn-success {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.cta-section .btn-success:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+/* Responsive Design */
+@media (max-width: 767.98px) {
+    .hero-section {
+        height: 50vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-section .btn-success {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .search-bar {
+        padding: 1rem;
+    }
+
+    .turf-card img {
+        height: 150px;
+    }
+
+    .featured-turf-card {
+        margin-bottom: 1rem;
+    }
+}

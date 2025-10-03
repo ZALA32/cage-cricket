@@ -1,0 +1,99 @@
+:root{
+  --primary-color:#198754;
+  --hover-color:#146c43;
+  --accent-color:#1b7f57;
+  --background-color:#e6f4ea;
+  --card-background:#ffffff;
+  --text-color:#212529;
+  --border-color:rgba(25,135,84,.2);
+  --border-radius:.75rem;
+  --shadow:0 .5rem 1rem rgba(0,0,0,.1);
+  --transition:all .3s ease;
+}
+
+body{background:var(--background-color);color:var(--text-color);}
+
+.container-fluid{padding:.5rem 1.5rem;}
+
+.dashboard-header{
+  background:linear-gradient(to right,#ffffff,#f4faf7);
+  padding:1.25rem 1.5rem;margin-bottom:1.5rem;border-radius:15px;
+  border-left:6px solid var(--accent-color);
+  box-shadow:0 4px 12px rgba(0,0,0,.05);text-align:center;
+}
+.dashboard-header h1{color:var(--accent-color);font-size:2rem;font-weight:600;margin:0;}
+
+.alert-danger{
+  background:linear-gradient(135deg,#f8d7da,#f1aeb5);
+  color:var(--text-color);border-left:6px solid #dc3545;border-radius:var(--border-radius);
+  box-shadow:0 4px 12px rgba(0,0,0,.08);font-size:.95rem;padding:1rem 1.25rem;
+  max-width:900px;margin:0 auto 1rem;
+}
+
+/* Hero */
+.card-shadow{box-shadow:var(--shadow);border-radius:var(--border-radius);background:var(--card-background);}
+.turf-hero{display:grid;grid-template-columns: 1.2fr 1fr;gap:1rem;padding:1rem;}
+.turf-hero-media{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--border-color);}
+.turf-hero-img{width:100%;height:100%;max-height:420px;object-fit:cover;display:block;}
+.view-full{position:absolute;bottom:.5rem;right:.5rem}
+
+.turf-hero-body{padding:.5rem .25rem;}
+.turf-title-row{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;}
+.turf-title{font-size:1.75rem;color:var(--primary-color);font-weight:700;}
+.turf-badges .badge{margin-left:.3rem}
+
+.badge.status-active{background:#198754;color:#fff;font-weight:600;padding:.35rem .6rem;border-radius:.3rem}
+.badge.status-inactive{background:#dc3545;color:#fff;font-weight:600;padding:.35rem .6rem;border-radius:.3rem}
+.badge.featured-yes{background:#28a745;color:#fff;font-weight:600;padding:.35rem .6rem;border-radius:.3rem}
+.badge.featured-no{background:#6c757d;color:#fff;font-weight:600;padding:.35rem .6rem;border-radius:.3rem}
+
+.turf-rating .stars i{font-size:1.1rem;color:#f7b500;}
+.turf-rating .avg-score{font-weight:700}
+.turf-rating .review-count{font-size:.9rem}
+
+/* Meta grid */
+.turf-meta{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;margin-top:.5rem
+}
+.meta-item{
+  display:flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border-color);
+  padding:.6rem .75rem;border-radius:.5rem;
+}
+.meta-item i{color:var(--primary-color);}
+
+/* Details */
+.card{border:1px solid var(--border-color);border-radius:var(--border-radius);background:var(--card-background);}
+.card-header{background:linear-gradient(135deg,#146c43,#198754);color:#fff;padding:.8rem 1rem;border-radius:var(--border-radius) var(--border-radius) 0 0;}
+.card-title{margin:0;font-weight:700;font-size:1.1rem}
+.card-body{padding:1rem;}
+
+.detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.detail-block{border:1px dashed var(--border-color);border-radius:.6rem;padding:1rem;background:#fff;}
+.detail-heading{font-size:1rem;color:var(--accent-color);font-weight:700;margin-bottom:.4rem}
+
+/* Reviews */
+.reviews{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.review{border:1px solid var(--border-color);border-radius:.6rem;padding:.75rem;background:#fff;}
+.review-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:.35rem}
+.review-stars i{color:#f7b500;}
+.review-meta{font-size:.9rem}
+.review-user{font-weight:600}
+.review-body{white-space:pre-wrap}
+
+/* Actions */
+.actions .btn{border-radius:.45rem;}
+
+/* Animations */
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeIn .6s ease-in-out}
+
+@media (max-width: 992px){
+  .turf-hero{grid-template-columns:1fr;}
+  .turf-hero-img{max-height:360px;}
+}
+
+@media (max-width: 768px){
+  .detail-grid, .reviews{grid-template-columns:1fr;}
+  .turf-meta{grid-template-columns:1fr;}
+  .dashboard-header h1{font-size:1.8rem;}
+}

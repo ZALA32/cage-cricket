@@ -1,0 +1,350 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e6f4ea; /* Light green background */
+    color: #333;
+    margin: 0; /* Ensure no default margins */
+}
+
+/* Navigation Buttons in Header (assumed in template.php) */
+.navbar .nav-link, .navbar .btn {
+    color: #ffffff !important; /* White text for Home, Dashboard, Logout */
+}
+
+/* Container */
+.turf-selection-container {
+    max-width: 1400px; /* Broadened to match view_booking.php */
+    padding: 20px;
+    margin: 0 auto; /* Center the container */
+}
+
+/* Header Section */
+.header-section {
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #198754, #146c43);
+    padding: 1.5rem;
+    border-radius: 12px;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header-section h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.header-section .header-subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Search Bar */
+.search-bar {
+    background-color: #e6f4ea; /* Light green to match theme */
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-input-group .input-group-text {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.search-input-group .form-control {
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+    padding: 0.75rem;
+}
+
+.search-input-group .form-control:focus {
+    border-color: #146c43;
+    box-shadow: 0 0 0 0.2rem rgba(20, 108, 67, 0.25);
+}
+
+#clearSearch {
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+/* Action Buttons */
+.action-buttons .btn-custom {
+    background-color: #198754;
+    border-color: #198754;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.action-buttons .btn-custom:hover {
+    background-color: #146c43;
+    border-color: #146c43;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Filters */
+.form-select, .form-check-input {
+    border-color: #198754;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.form-select:focus, .form-check-input:focus {
+    border-color: #146c43;
+    box-shadow: 0 0 0 0.2rem rgba(20, 108, 67, 0.25);
+}
+
+.form-check-label {
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Turf Cards */
+.turf-card {
+    border: 2px solid #198754; /* Dark green border for non-featured cards */
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #e6f4ea; /* Light green to match theme */
+    display: flex;
+    flex-direction: column;
+}
+
+.turf-card.featured {
+    border: 3px solid #198754; /* Thicker border for featured cards */
+    background: linear-gradient(180deg, rgba(25, 135, 84, 0.1), #e6f4ea); /* Light green gradient */
+    box-shadow: 0 0 10px rgba(25, 135, 84, 0.5);
+}
+
+.turf-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.turf-img {
+    height: 200px; /* 🔼 increased from 140px */
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+
+.card-body {
+    padding: 0.75rem;
+    flex-grow: 1;
+    background-color: #e6f4ea; /* Ensure card body matches light green */
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #198754;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.turf-details .detail-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.turf-details .label {
+    font-weight: 600;
+    color: #333;
+    min-width: 80px;
+    padding-right: 10px;
+}
+
+.turf-details .value {
+    color: #555;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 2.8rem; /* Approximately 2 lines at 0.9rem font-size with 1.4 line-height */
+    line-height: 1.4;
+}
+
+.map-placeholder {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    background: #e6f4ea;
+    border-radius: 8px;
+    color: #146c43;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.map-placeholder:hover {
+    background: #d4edda;
+    color: #198754;
+}
+
+.weather-info .value {
+    color: #146c43;
+    font-weight: 500;
+}
+
+.distance-info .value {
+    color: #198754;
+    font-weight: 500;
+}
+
+.card-footer {
+    background-color: #e6f4ea; /* Light green to match theme */
+    padding: 0.75rem;
+    border-top: none;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+}
+
+.card-footer .btn-custom {
+    flex: 1;
+    font-size: 0.85rem;
+    padding: 0.4rem;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.card-footer .btn-success {
+    background-color: #198754;
+    border-color: #198754;
+    color: #ffffff;
+}
+
+.card-footer .btn-success:hover {
+    background-color: #146c43;
+    border-color: #146c43;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Featured Badge */
+.featured-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #198754;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    z-index: 1;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Modal */
+.modal-content {
+    border: 2px solid #198754;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background-color: #e6f4ea !important;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.modal-footer .btn-custom {
+    padding: 0.5rem 1rem;
+}
+.modal-body hr {
+    border-color: #ccc;
+    margin: 20px 0 10px;
+}
+.modal-body ul li {
+    font-size: 0.9rem;
+}
+
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-title {
+    animation: slideInDown 0.8s ease-out;
+}
+
+@keyframes slideInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .header-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-section .header-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .turf-img {
+        height: 120px;
+    }
+
+    .card-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .card-footer .btn-custom {
+        width: 100%;
+    }
+
+    .search-bar .row > div {
+        margin-bottom: 1rem;
+    }
+
+    .search-bar .d-flex.align-items-center {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .search-bar .d-flex.align-items-center input,
+    .search-bar .d-flex.align-items-center button {
+        width: 100%;
+    }
+
+    .turf-details .label {
+        min-width: 70px;
+    }
+
+    .turf-details .value {
+        max-height: 2.52rem; /* Adjusted for 0.9rem font-size on mobile */
+    }
+}
+.rating-stars i {
+    margin-right: 2px;
+    font-size: 1rem;
+}

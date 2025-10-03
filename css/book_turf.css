@@ -1,0 +1,1051 @@
+:root {
+    --primary-color: #198754; /* Dark green from Cage Cricket theme */
+    --secondary-color: #146c43; /* Darker green for accents */
+    --background-color: #e6f4ea; /* Light green main background */
+    --section-background: #f0f8f2; /* Very light green for sections */
+    --highlight-background: #d4edda; /* Slightly saturated green, kept for reference */
+    --text-color: #333333; /* Dark text for readability */
+    --error-color: #dc3545; /* Red for errors */
+    --border-radius: 12px; /* Consistent rounded corners */
+    --shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+    --transition: all 0.3s ease; /* Smooth transitions */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navigation Links for template.php */
+nav .nav-link,
+nav a {
+    color: #ffffff !important; /* White links for Home, Dashboard, Logout */
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+nav .nav-link:hover,
+nav a:hover {
+    color: #f0f0f0 !important; /* Slightly lighter white on hover */
+    text-decoration: none;
+}
+
+/* Header Section */
+.header-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(25, 135, 84, 0.2), rgba(20, 108, 67, 0.2));
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.header-section h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+    animation: slideInDown 0.8s ease-out;
+}
+
+.header-section p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #ffffff;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Turf Info */
+.turf-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.turf-info .image-container {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.turf-info img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform var(--transition);
+}
+
+.turf-info img:hover {
+    transform: scale(1.05);
+}
+
+.turf-info .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(25, 135, 84, 0.2));
+    border-radius: var(--border-radius);
+}
+
+.turf-details {
+    background: #FFFFFF;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: transform var(--transition);
+}
+
+.turf-details:hover {
+    transform: translateY(-5px);
+}
+
+.turf-details h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.turf-details .details-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.turf-details .detail-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: #ffffff;
+    transition: var(--transition);
+}
+
+.turf-details .detail-item:hover {
+    background: var(--secondary-color);
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.turf-details .detail-item .label,
+.turf-details .detail-item .value {
+    color: #ffffff;
+}
+
+.turf-details .detail-item:hover .label,
+.turf-details .detail-item:hover .value {
+    color: #ffffff;
+}
+
+.turf-details .label {
+    font-weight: 600;
+    min-width: 80px;
+}
+
+.turf-details .value {
+    flex: 1;
+}
+
+/* Facilities Section */
+.facilities-section {
+    background: #FFFFFF;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.facilities-section h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.facility-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.facility-item:hover {
+    background: var(--secondary-color);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.facility-item:hover i {
+    color: #ffffff;
+    transform: scale(1.2);
+}
+
+.facility-item i {
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+/* Why Book Section */
+.why-book {
+    background: #FFFFFF;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.why-book h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    background: var(--secondary-color);
+    color: #ffffff;
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover i,
+.feature-card:hover span {
+    color: #ffffff;
+}
+
+.feature-card i {
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.feature-card span {
+    font-size: 0.9rem;
+}
+
+/* Booking Card */
+.booking-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: #FFFFFF;
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    border: none;
+}
+
+/* Booking Form Container */
+.booking-form-container {
+    padding: 2.5rem;
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Offers Section */
+.offers-section {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInSection 0.8s ease-out;
+}
+
+.offers-section h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.offer-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #ffffff;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.2;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    flex-wrap: wrap;
+    animation: pulseOffer 1.5s ease-in-out infinite;
+    margin-bottom: 0.5rem;
+}
+
+.offer-item:last-child {
+    margin-bottom: 0;
+}
+
+.offer-item:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    transform: translateX(5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.offer-item i {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.offer-item:hover i {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.offer-item strong {
+    font-weight: 700;
+    font-style: italic;
+    color: #f0f0f0;
+}
+
+/* Form Styling */
+.booking-form-container h4 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.required-asterisk {
+    color: var(--error-color);
+    font-size: 0.9rem;
+}
+
+.form-control,
+.form-select,
+.flatpickr-input {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    background: #FFFFFF;
+    transition: var(--transition);
+}
+
+.form-control:focus,
+.form-select:focus,
+.flatpickr-input:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.3);
+    background: #FFFFFF;
+}
+
+.form-control:hover,
+.form-select:hover,
+.flatpickr-input:hover {
+    border-color: var(--secondary-color);
+    background: #FFFFFF;
+}
+
+.form-control.is-invalid {
+    border-color: var(--error-color);
+}
+
+.form-select option.conflict-option,
+.form-select option.past-option {
+    color: var(--error-color);
+    font-weight: bold;
+}
+
+.form-check {
+    margin-bottom: 0.5rem;
+}
+
+.form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+    border-color: var(--primary-color);
+    transition: transform var(--transition);
+}
+
+.form-check-input:checkedAI {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-input:hover {
+    transform: scale(1.15);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-check-label {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    font-weight: 700; /* Make service labels bold */
+    transition: var(--transition);
+}
+
+.form-check-label:hover {
+    color: var(--primary-color);
+}
+
+.services-checkboxes {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
+
+.form-check-inline {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    transition: var(--transition);
+}
+
+.form-check-inline:hover {
+    transform: scale(1.05);
+}
+
+.capacity-warning,
+.slot-warning,
+.discount-feedback {
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.capacity-warning.show,
+.slot-warning.show,
+.discount-feedback.show {
+    display: flex;
+}
+
+/* Cost Breakdown */
+.cost-breakdown-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: #FFFFFF;
+    padding: 2.25rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInSection 0.8s ease-out;
+}
+
+.cost-breakdown-content p {
+    font-size: 1rem;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+}
+
+.cost-breakdown-content .total {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    border-top: 2px solid var(--primary-color);
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+    animation: pulseTotal 1s ease-in-out;
+}
+
+.pricing-type-value.weekend::after {
+    content: '20% higher base cost on weekends';
+    position: absolute;
+    top: -2.5rem;
+    right: 0;
+    background: var(--secondary-color);
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    display: none;
+    z-index: 10;
+}
+
+.pricing-type-value.weekend:hover::after {
+    display: block;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-success,
+.btn-secondary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #ffffff;
+    border: none;
+    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.btn-primary:hover,
+.btn-success:hover,
+.btn-secondary:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+}
+
+/* Modal */
+.modal-content {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: none;
+}
+
+.modal-header {
+    background: var(--primary-color);
+    color: #ffffff;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    padding: 1rem;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+}
+
+.modal-body {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    padding: 1.5rem;
+}
+
+.modal-body p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.modal-body .total {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    border-top: 2px solid var(--primary-color);
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.modal-footer {
+    padding: 1rem;
+    border-top: none;
+}
+
+/* Errors */
+.error-message {
+    background: rgba(220, 53, 69, 0.1);
+    color: var(--error-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--error-color);
+}
+
+.error-message li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Live Availability Section */
+.live-availability-section {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+    animation: fadeInSection 0.8s ease-out;
+}
+
+.live-availability-section h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#availability-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.legend-color {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.legend-color.available {
+    background-color: #2ca86a;
+}
+
+.legend-color.partial {
+    background-color: #ffca2c;
+}
+
+.legend-color.booked {
+    background-color: var(--error-color);
+}
+
+#availability-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+#availability-grid p {
+    grid-column: 1 / -1; /* Span full width */
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 0;
+    display: none; /* Hide default text when spinner is active */
+}
+
+.loading-spinner {
+    grid-column: 1 / -1; /* Span full width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInSection 0.6s ease-out;
+}
+
+.loading-spinner::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--primary-color);
+    border-top: 4px solid var(--secondary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-spinner::after {
+    content: 'Loading Availability...';
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    animation: pulseText 1.5s ease-in-out infinite;
+}
+
+.availability-block {
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+}
+
+.availability-block.available {
+    background-color: #2ca86a;
+    animation: pulseAvailable 1.5s ease-in-out infinite;
+}
+
+.availability-block.partial {
+    background-color: #ffca2c;
+    color: var(--text-color);
+}
+
+.availability-block.booked {
+    background-color: var(--error-color);
+}
+
+.availability-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.availability-block.available:hover {
+    background: linear-gradient(135deg, #2ca86a, var(--secondary-color));
+}
+
+.availability-block.partial:hover {
+    background: linear-gradient(135deg, #ffca2c, #e0a800);
+}
+
+.availability-block.booked:hover {
+    background: linear-gradient(135deg, var(--error-color), #b02a37);
+}
+
+.availability-block:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text-color);
+    color: #ffffff;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    max-width: 200px;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.availability-block:hover::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% - 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--text-color);
+}
+
+.availability-block:hover::after {
+    opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInSection {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseTotal {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulseOffer {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulseAvailable {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseText {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.fade-in-section {
+    animation: fadeInSection 0.6s ease-out;
+    animation-delay: calc(var(--section-index) * 0.1s);
+    animation-fill-mode: both;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .booking-card {
+        padding: 1.5rem;
+    }
+
+    .booking-form-container {
+        padding: 1.5rem;
+    }
+
+    .facility-grid,
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-checkboxes {
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    #availability-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+
+    .offer-item {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+        margin-bottom: 0.4rem;
+        line-height: 1.1;
+    }
+
+    .offer-item i {
+        font-size: 0.9rem;
+    }
+
+    .offer-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .availability-block {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    .availability-block:hover::after {
+        max-width: 150px;
+        font-size: 0.85rem;
+    }
+
+    .loading-spinner::before {
+        width: 32px;
+        height: 32px;
+    }
+
+    .loading-spinner::after {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-section p {
+        font-size: 0.9rem;
+    }
+
+    .turf-info {
+        grid-template-columns: 1fr;
+    }
+
+    .turf-info img {
+        height: 200px;
+    }
+
+    .turf-details h4,
+    .facilities-section h4,
+    .why-book h4,
+    .booking-form-container h4,
+    .section-title,
+    .live-availability-section h4 {
+        font-size: 1.25rem;
+    }
+
+    .cost-breakdown-content {
+        padding: 1.5rem;
+    }
+
+    .cost-breakdown-content p {
+        font-size: 0.9rem;
+    }
+
+    .cost-breakdown-content .total {
+        font-size: 1.1rem;
+    }
+
+    .facility-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    #availability-grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    }
+
+    #availability-legend {
+        flex-direction: column;
+        gap: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .services-checkboxes {
+        align-items: center;
+    }
+
+    .offer-item {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+        margin-bottom: 0.3rem;
+        line-height: 1.0;
+    }
+
+    .offer-item i {
+        font-size: 0.8rem;
+    }
+
+    .offer-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .availability-block {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .availability-block:hover::after {
+        max-width: 120px;
+        font-size: 0.8rem;
+    }
+
+    .loading-spinner::before {
+        width: 28px;
+        height: 28px;
+    }
+
+    .loading-spinner::after {
+        font-size: 0.85rem;
+    }
+}

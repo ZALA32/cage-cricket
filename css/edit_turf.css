@@ -1,0 +1,146 @@
+:root {
+  --primary-color: #198754;
+  --hover-color: #146c43;
+  --background-color: #e6f4ea;
+  --card-background: #ffffff;
+  --text-color: #212529;
+  --border-color: rgba(25, 135, 84, 0.2);
+  --border-radius: 0.75rem;
+  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  background-color: var(--background-color) !important;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container-fluid {
+  background-color: transparent !important;
+  padding: 0.5rem 1.5rem;
+}
+
+.fade-in { animation: fadeIn 0.5s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.hover-scale { transition: transform 0.2s ease-in-out; }
+.hover-scale:hover { transform: scale(1.05); }
+
+.dashboard-header {
+  background: linear-gradient(to right, #ffffff, #f4faf7);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius);
+  border-left: 6px solid var(--hover-color);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.dashboard-header h1 {
+  color: var(--hover-color);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.dashboard-header .bi-pencil-square { font-size: 1.4rem; color: var(--hover-color); }
+
+.card {
+  background-color: var(--card-background);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); }
+
+.card-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  background: none !important;
+}
+.card-header.custom-turf-header {
+  background-color: var(--hover-color) !important;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.form-control, .form-select {
+  border: 1px solid var(--border-color);
+  border-radius: 0.625rem;
+  font-size: 0.95rem;
+  padding: 0.75rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(25, 135, 84, 0.3);
+  outline: none;
+}
+.form-label { font-size: 0.95rem; font-weight: 600; color: var(--text-color); }
+.invalid-feedback, .form-text { font-size: 0.85rem; }
+
+.btn-success, .btn-danger {
+  border-radius: 0.625rem;
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.btn-success { background-color: var(--primary-color); border: none; }
+.btn-success:hover { background-color: var(--hover-color); }
+.btn-danger { background-color: #dc3545; border: none; }
+.btn-danger:hover { background-color: #c82333; }
+.btn:focus { box-shadow: none; }
+
+.alert-container {
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  padding: 0;
+}
+.alert {
+  margin: 0;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  max-width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.alert-success {
+  background: linear-gradient(135deg, #e1f7e7, #cdeedb);
+  border-left: 6px solid var(--primary-color);
+}
+.alert-danger {
+  background: linear-gradient(135deg, #f8d7da, #f1aeb5);
+  border-left: 6px solid #dc3545;
+}
+.alert-dismissible .btn-close { top: 0.6rem; right: 1rem; }
+
+.current-photo-img, #preview-img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.form-check-input[type="checkbox"].form-check-input, .form-check-input.form-switch {
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .container-fluid { padding: 1rem 0.9375rem; }
+  .card-body { padding: 1.5rem; }
+  .btn-lg { padding: 0.5rem 1.5rem; font-size: 0.9rem; }
+  .dashboard-header h1 { font-size: 1.6rem; }
+  .dashboard-header .bi-pencil-square { font-size: 1.2rem; }
+}

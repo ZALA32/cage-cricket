@@ -1,0 +1,120 @@
+/* Fade-in animation */
+.fade-in { animation: fadeIn 0.5s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+
+/* Hover scale effect */
+.hover-scale { transition: transform 0.2s ease-in-out; }
+.hover-scale:hover { transform: scale(1.05); }
+
+/* Hover effect for table rows */
+.table-hover tbody tr:hover { background-color: rgba(40, 167, 69, 0.1); transition: background-color 0.3s ease; }
+
+/* Card styling */
+.card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); }
+
+/* Button styling */
+.btn-success, .btn-outline-success, .btn-outline-secondary { border-radius: 8px; }
+.btn-outline-success:hover { background-color: #28a745; color: #fff; }
+.btn-outline-secondary:hover { background-color: #6c757d; color: #fff; }
+
+/* Compact pill header */
+.dashboard-header {
+  background: linear-gradient(to right, #ffffff, #f4faf7);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.75rem;
+  border-left: 6px solid #146c43;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+  display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+}
+.dashboard-header h1 { color: #146c43; font-size: 1.8rem; font-weight: 700; margin: 0; display: flex; align-items: center; gap: .5rem; }
+.dashboard-header i { font-size: 1.4rem; color: #146c43; }
+
+/* Pagination styling */
+.pagination .page-link { color: #146c43; border-radius: 0.5rem; margin: 0 .2rem; }
+.pagination .page-item.active .page-link { background-color: #28a745; border-color: #28a745; color: #fff; }
+.pagination .page-item.disabled .page-link { color: #6c757d; }
+
+/* Modal styling */
+.modal-content { border-radius: 0.75rem; border: none; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); }
+.modal-header { background-color: #146c43; color: #fff; }
+.modal-title { font-weight: 600; }
+.modal-footer .btn-success { background-color: #28a745; border-color: #28a745; }
+.modal-footer .btn-success:hover { background-color: #218838; border-color: #1e7e34; }
+
+/* Inactive turf badge */
+.badge.bg-warning { font-size: 0.75rem; padding: 0.3em 0.6em; }
+
+/* ==================== ORGANIZER-STYLE TABLE ==================== */
+:root{
+  --background-color: #e6f4ea;
+  --cc-green-800:#146c43;
+  --cc-green-600:#198754;
+  --cc-mint-50:#f4faf7;
+  --cc-line:#e6f3ec;
+}
+
+/* Wrap around table for subtle frame */
+.card .card-body .table-responsive{
+  border:1px solid var(--cc-line);
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 4px 14px rgba(20,108,67,.05);
+}
+
+/* Header */
+.booking-table thead th{
+  background: var(--cc-green-800);
+  color:#fff;
+  font-weight:600;
+  border:0 !important;
+  padding:.9rem 1rem !important;
+  white-space:nowrap;
+}
+
+/* Cells & zebra */
+.booking-table td{
+  padding:.85rem 1rem !important;
+  border-top:1px solid var(--cc-line) !important;
+  vertical-align:middle;
+  color:#2b3a33;
+}
+.booking-table tbody tr:nth-child(even) td{ background: var(--cc-mint-50); }
+.booking-table tbody tr:nth-child(odd)  td{ background: #fff; }
+
+/* Center some numeric columns (Capacity, Cost, Payment) */
+.booking-table td:nth-child(6),
+.booking-table td:nth-child(7),
+.booking-table td:nth-child(9){ text-align:center; }
+
+/* Ensure TD never gets the pill background */
+.booking-table td.fw-bold.text-success,
+.booking-table td.fw-bold.text-danger,
+.booking-table td.fw-bold.text-warning,
+.booking-table td.fw-bold.text-info{
+  background:transparent !important;
+  border:0 !important;
+  border-radius:0 !important;
+}
+
+/* Chip pills */
+.chip{
+  display:inline-block;
+  font-weight:600;
+  padding:.35rem .7rem;
+  border-radius:999px;
+  line-height:1;
+  border:1px solid transparent;
+}
+.chip.text-success{ background:#e7f6ee; color:#146c43 !important; border-color:#bfe8d1; }
+.chip.text-danger { background:#ffecec; color:#a32626 !important; border-color:#ffb1b1; }
+.chip.text-warning{ background:#fff6e5; color:#b76b00 !important; border-color:#ffd596; }
+.chip.text-info   { background:#e8f9ff; color:#0b7285 !important; border-color:#9fe4fb; }
+
+/* Small pill buttons inside table */
+.booking-table .btn{ border-radius:999px; padding:.25rem .6rem; font-size:.78rem; }
+
+/* Modal width tweak */
+#confirmCashModal .modal-dialog{ max-width:420px; }
